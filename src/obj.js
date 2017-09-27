@@ -10,18 +10,22 @@
 * For all details and documentation:
 *     http://bunkat.github.com/pseudoloc
 */
-pseudoloc.obj = function(obj) {
-  for(var id in obj) {
-    switch (typeof(obj[id])) {
+import str from "./str"
+
+export var obj = function(o) {
+  for(var id in o) {
+    switch (typeof(o[id])) {
       case "string":
-        obj[id] = pseudoloc.str(obj[id]);
+        o[id] = str(o[id]);
         break;
       case "object":
-        pseudoloc.obj(obj[id]);
+        obj(o[id]);
         break;
       default:
         continue;
     }
   }
-  return obj;
+  return o;
 };
+
+export default obj;

@@ -8,7 +8,7 @@
 * For all details and documentation:
 *     http://bunkat.github.com/pseudoloc
 */
-pseudoloc.table = {
+export var table = {
   A: String.fromCharCode(192,193,194,195,196,197,256,258,260,506,512,514),
   a: String.fromCharCode(224,225,226,227,228,229,257,259,261,507,513,515),
   B: String.fromCharCode(223,385,579,665),
@@ -56,3 +56,5 @@ pseudoloc.table = {
   Z: String.fromCharCode(377,379,381,437),
   z: String.fromCharCode(378,380,382,438)
 };
+
+export default table;

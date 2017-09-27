@@ -12,26 +12,22 @@
     "url": "git://github.com/jacalata/pseudoloc.git"
   },
   "main": "index.js",
-  "browserify": "index-browserify.js",
-  "jam": {
-    "main": "psuedoloc.js",
-    "shim": {
-      "exports": "pseudoloc"
-    }
-  },
   "dependencies": {
     "commander": "*"
   },
   "devDependencies": {
-    "smash": "~0.0.8",
-    "mocha": "*",
-    "should": ">=0.6.3",
+    "benchmark": "*",
     "jslint": "*",
-    "uglify-js": "*",
-    "benchmark": "*"
+    "mocha": "*",
+    "rollup": "^0.50.0",
+    "should": ">=0.6.3",
+    "smash": "~0.0.8",
+    "uglify-js": "*"
   },
   "license": "MIT",
   "scripts": {
+    "pretest": "npm run build",
+    "build": "rollup src/index.js --format cjs > index.js",
     "test": "./node_modules/.bin/mocha test/**/*-test.js"
   }
 }

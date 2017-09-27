@@ -8,8 +8,7 @@
 * For all details and documentation:
 *     http://bunkat.github.com/pseudoloc
 */
-pseudoloc.pad = function(str, percent) {
-
+export var pad = function(str, percent) {
   var len = Math.floor(str.length * percent),
       pStr = str;
 
@@ -19,3 +18,5 @@ pseudoloc.pad = function(str, percent) {
 
   return pStr;
 };
+
+export default pad;
